@@ -1,0 +1,4 @@
+NOTES:
+
+* make sure the app directory is 755 or apache won't be able to serve it from the vagrant box
+
