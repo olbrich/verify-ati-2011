@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "apache2"
+include_recipe "apache2::mod_php5"
 include_recipe "php"
 include_recipe "mysql::client"
 include_recipe "mysql::server"
@@ -24,6 +24,14 @@ mysql_database "create application_production database" do
   action :create_db
 end
 
+mysql_database "create application_development database" do
+  host "localhost"
+  username "root"
+  password node[:mysql][:server_root_password]
+  database "application_development"
+  action :create_db
+end
+
 mysql_database "create application_test database" do
   host "localhost"
   username "root"
@@ -32,3 +40,6 @@ mysql_database "create application_test database" do
   action :create_db
 end
 
+link "/var/www/app" do 
+  to "/vagrant/app"
+end
