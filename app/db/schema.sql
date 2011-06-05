@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS `blogs`;
+		
+CREATE TABLE `blogs` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(80) NOT NULL,
+  `body` MEDIUMTEXT NOT NULL,
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
