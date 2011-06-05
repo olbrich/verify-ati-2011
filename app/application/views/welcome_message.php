@@ -58,6 +58,7 @@ code {
 <li><a href="http://cukes.info">Cucumber</a></li>
 <li><a href="http://vagrantup.com">Vagrant</a></li>
 <li><a href="https://github.com/olbrich/cuke4php">cuke4php</a></li>
+<li><a href="http://watir.com">Watir</a></li>
 </ul>
 
 </body>
