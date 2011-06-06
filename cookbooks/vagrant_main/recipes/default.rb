@@ -8,6 +8,7 @@
 #
 
 include_recipe "apache2::mod_php5"
+include_recipe "apache2::mod_rewrite"
 include_recipe "php::module_mysql"
 include_recipe "mysql::client"
 include_recipe "mysql::server"
