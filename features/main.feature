@@ -9,4 +9,4 @@ Scenario: A user visits the home page
     And the page should contain 1 "h1" tag
     And the page should contain 3 "h2" tags
     And the page should contain 1 "ul" tag
-    And the page should contain 4 "a" tags
+    And the page should contain at least 4 "a" tags

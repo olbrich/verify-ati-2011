@@ -24,11 +24,15 @@ end
 
 # ========= Assertions
 
-Then /^the page should have the title "([^"]*)"$/ do |title|
+Then /^the page (?:should have the title|title should be) "([^"]*)"$/ do |title|
   $browser.title.should == title
 end
 
-
-Then /^the page should contain (\d+) "([^"]*)" tags?$/ do |count, tag|
+Then /^the page should contain (\d+) "([^"]*)" (?:tags?)$/ do |count, tag|
   $browser.send("#{tag}s").should have(count).elements
 end
+
+Then /^the page should contain at least (\d+) "([^"]*)" tags$/ do |count, tag|
+  $browser.send("#{tag}s").should have_at_least(count).elements
+end
+
