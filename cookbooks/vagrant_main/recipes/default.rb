@@ -17,6 +17,19 @@ gem_package "mysql" do
   action :install
 end
 
+gem_package "cuke4php" do
+  version "0.9.6.c"
+  action :install
+end
+
+gem_package "watchr" do
+  action :install
+end
+
+link "/var/www/app" do 
+  to "/vagrant/app"
+end
+
 
 %w{production development test}.each do |env|
   
@@ -28,22 +41,10 @@ end
     action :create_db
   end
 
-  execute "create blogs table in application_#{env} database" do
-    sql = %Q{
-      CREATE TABLE IF NOT EXISTS blogs (
-        id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(80) NOT NULL,
-        body TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT NOW(),
-        updated_at TIMESTAMP);
-    }
-    command "echo \"#{sql}\" | /usr/bin/mysql -u root -p#{node[:mysql][:server_root_password]} application_#{env}"
+  execute "create tables in application_#{env} database" do
+    command "/usr/bin/mysql -u root -p#{node[:mysql][:server_root_password]} application_#{env} < /var/www/app/application/db/blogs.sql"
   end
   
-end
-
-link "/var/www/app" do 
-  to "/vagrant/app"
 end
 
 web_app "app" do
