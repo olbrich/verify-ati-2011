@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'watir-webdriver'
 require 'rspec'
 
-ROOT_URL = "http://localhost:8080/app"
+ROOT_URL = "http://localhost:8080"
 
 def location(name)
   case name
