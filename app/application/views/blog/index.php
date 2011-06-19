@@ -7,7 +7,7 @@
   <?php foreach ($blogs as $blog) { 
     echo "<tr>
       <td>{$blog->created_at}</td>
-      <td>{$blog->title}</td>
+      <td><a href=\"/blog/show/{$blog->id}\">{$blog->title}</a></td>
       </tr>";
   }
   ?>

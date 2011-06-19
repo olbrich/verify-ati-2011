@@ -1,6 +1,10 @@
 <h1>Testing PHP Web Applications with Cucumber</h1>
 
 <h2>Browser-based testing</h2>
+  <ul>
+    <li><a href="/blog">Blog index</a></li>
+    <li><a href="/blog/new">Create new blog entry</a>
+  </ul>
 
 <h2>Functional testing with cuke4php</h2>
 
