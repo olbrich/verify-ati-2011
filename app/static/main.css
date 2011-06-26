@@ -1,1 +1,23 @@
+body {
+    background: lightblue;
+    font: 125%  Arial, "MS Trebuchet", sans-serif;
+}
+
+div#main {
+    width:90%;
+    padding:1em;
+    margin-left:auto;
+    margin-right:auto;
+    background: white;
+    border-radius:20px;
+    border: 1px solid #999;
+    box-shadow: 10px 10px 5px #888;
+}
+
+h1 {
+    text-align:center;
+    font-family: Arial, "MS Trebuchet", sans-serif;
+    font-weight: normal;
+}
+
 tbody { border: 1px solid #999;}

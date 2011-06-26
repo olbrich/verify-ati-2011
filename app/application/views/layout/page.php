@@ -4,6 +4,11 @@
     <link rel="stylesheet" href="/static/main.css" type="text/css" media="screen" title="main" charset="utf-8">
   </head>
   <body>
-    <?php echo $body ?>
+    <div id="main">
+        <div>
+          <a href="/">Home</a>
+        </div>
+        <?php echo $body ?>
+    </div>
   </body>
 </html>
