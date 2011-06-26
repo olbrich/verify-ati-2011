@@ -1,17 +1,44 @@
 body {
-    background: lightblue;
+    background: #AAA;
     font: 125%  Arial, "MS Trebuchet", sans-serif;
 }
 
 div#main {
     width:90%;
     padding:1em;
+    padding-top:0;
     margin-left:auto;
     margin-right:auto;
     background: white;
-    border-radius:20px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
     border: 1px solid #999;
     box-shadow: 10px 10px 5px #888;
+}
+
+div#nav {
+    border: 1px solid #999;
+    background: lightyellow;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0;
+    padding: 1em;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    box-shadow: 10px 10px 5px #888;
+}
+
+#nav ul {
+    list-style-type:none;
+    margin-top:0;
+}
+
+#nav li {
+    float: left;
+    line-height:1.5em;
+    margin:0;
+    padding-right:2em;
 }
 
 h1 {
@@ -20,4 +47,16 @@ h1 {
     font-weight: normal;
 }
 
-tbody { border: 1px solid #999;}
+table { 
+    border-collapse:collapse;
+    border: 2px solid black;
+    }
+
+th {
+    padding: 5px;
+    border-bottom:2px solid black;
+}
+
+td {
+    padding: 5px;
+}
