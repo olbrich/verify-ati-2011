@@ -1,1 +1,1 @@
-watir: BROWSER=firefox --no-source
+watir: BROWSER=firefox --no-source --format progress --format html --out app/browser.html
