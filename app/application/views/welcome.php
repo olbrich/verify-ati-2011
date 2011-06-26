@@ -1,14 +1,11 @@
 <h1>Testing PHP Web Applications with Cucumber</h1>
 
-<h2>Browser-based testing</h2>
-  <ul>
-    <li><a href="/blog">Blog index</a></li>
-    <li><a href="/blog/new">Create new blog entry</a>
-  </ul>
-
-<h2>Functional testing with cuke4php</h2>
-
-<h2>Remote Instrumentation with cuke4php</h2>
+<h2>Topics</h2>
+<ul>
+    <li><a href="/browser">Browser based testing</a></li>
+    <li><a href="/cuke4php">Functional testing with cuke4php</a></li>
+    <li><a href="/cuke4php_remote">Remote Instrumentation with cuke4php</a></li>
+</ul>
 
 <h3>Links</h3>
 <ul>
