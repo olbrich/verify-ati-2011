@@ -1,3 +1,5 @@
+<h1>Blog Entries</h1>
+
 <table>
   <tr>
     <th>Date</th>
@@ -13,3 +15,5 @@
   ?>
   </tbody>
 </table>
+
+<a href="/blog/new">Create New Entry</a>
