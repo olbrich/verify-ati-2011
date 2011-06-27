@@ -7,23 +7,48 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe "apt"
+
+apt_repository "dotdeb" do
+  uri "http://packages.dotdeb.org"
+  distribution 'stable'
+  components ["all"]
+  key "http://www.dotdeb.org/dotdeb.gpg"
+  action :add
+end
+
 include_recipe "apache2::mod_php5"
 include_recipe "apache2::mod_rewrite"
-include_recipe "php::module_mysql"
 include_recipe "mysql::client"
 include_recipe "mysql::server"
 
-gem_package "mysql" do
+include_recipe "php"
+
+package "php5-mysql" do
   action :install
 end
 
-gem_package "cuke4php" do
-  version "0.9.6.c"
+package "php5-curl" do
   action :install
 end
 
-gem_package "watchr" do
+%w{pear.phpunit.de components.ez.no pear.symfony-project.com}.each do |channel|
+  php_pear_channel channel do
+    action :discover
+  end
+end
+
+php_pear "PHPUnit" do
+  channel 'phpunit'
   action :install
+end
+
+gem_package "bundler" do
+  action :install
+end
+
+execute "bundle install" do
+  command "cd /vagrant && bundle install --without=development"
 end
 
 link "/var/www/app" do 
