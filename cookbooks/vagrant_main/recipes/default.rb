@@ -6,6 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+include_recipe "mysql::server"
+include_recipe "mysql::client"
 
 include_recipe "apt"
 
@@ -19,8 +21,6 @@ end
 
 include_recipe "apache2::mod_php5"
 include_recipe "apache2::mod_rewrite"
-include_recipe "mysql::client"
-include_recipe "mysql::server"
 
 include_recipe "php"
 
@@ -40,6 +40,8 @@ end
 
 php_pear "PHPUnit" do
   channel 'phpunit'
+  preferred_state 'beta' # required because some dependencies aren't stable
+  version "3.5.14"
   action :install
 end
 
@@ -48,7 +50,7 @@ gem_package "bundler" do
 end
 
 execute "bundle install" do
-  command "cd /vagrant && bundle install --without=development"
+  command "cd /vagrant && bundle install"
 end
 
 link "/var/www/app" do 
@@ -56,7 +58,7 @@ link "/var/www/app" do
 end
 
 
-%w{production development test}.each do |env|
+%w{production development testing}.each do |env|
   
   mysql_database "create application_#{env} database" do
     host "localhost"
