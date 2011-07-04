@@ -10,3 +10,5 @@ desc "Run Kohana Framework tests"
 task :kohana do
   exec "cd app && phpunit --bootstrap=modules/unittest/bootstrap.php modules/unittest/tests.php"
 end
+
+task :default => :watir
