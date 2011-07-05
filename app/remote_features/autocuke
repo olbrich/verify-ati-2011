@@ -1,0 +1,14 @@
+#!/usr/bin/env watchr
+
+def start_server
+	fork do
+		exec "cuke4php_server -p 16817 #{File.dirname(__FILE__)} "
+	end
+end
+
+$server = start_server
+
+watch(".php$") do |f|
+	Process.kill("TERM",$server)
+	$server = start_server	
+end

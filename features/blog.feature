@@ -16,9 +16,11 @@ Scenario: I create a blog entry
   And I fill "Body" with "lorem ipsum, blah, blah, blah..."
   And I press "Create"
   Then the page title should be "Blog: my awesome blog title"
-  
+
+@remote  
 Scenario: I view a blog entry
-  Given a blog entry exists:
+  Given the "blogs" table is empty
+  And a blog entry exists:
     | id    | 1                             |
     | title | yet another awesome blog post |
     | body  | I can haz blog post?          |
