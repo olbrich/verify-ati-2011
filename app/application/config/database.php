@@ -1,5 +1,12 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
+$dbname = '';
+if (array_key_exists('KOHANA_ENV', $_SERVER)) {
+    $dbname = 'application_' . strtolower($_SERVER['KOHANA_ENV']);
+} else {
+    $dbname = "application_development";
+}
+
 return array
 (
 	'default' => array
@@ -18,7 +25,7 @@ return array
 			 * Ports and sockets may be appended to the hostname.
 			 */
 			'hostname'   => 'localhost',
-			'database'   => 'application_' . strtolower($_SERVER['KOHANA_ENV']),
+			'database'   => $dbname,
 			'username'   => 'root',
 			'password'   => 'foo',
 			'persistent' => FALSE,
