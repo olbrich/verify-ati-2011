@@ -2,6 +2,10 @@
 
 class BlogSteps extends CucumberSteps {
 
+    /**
+     * Before Hook
+     * delete the contents of the 'blogs' table in preparation for a test run
+     */
     public function beforeCleanDB() {
         DB::delete("blogs")->execute();
     }
@@ -16,14 +20,12 @@ class BlogSteps extends CucumberSteps {
         }
     }
 
-
     /**
     * When /^the model is saved$/
     **/
     public function stepTheModelIsSaved() {
         $this->blog->save();
     }
-
 
     /**
     * Then /^there should be (\d+) blog$/

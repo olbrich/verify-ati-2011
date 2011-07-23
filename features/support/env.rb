@@ -22,3 +22,4 @@ AfterConfiguration do |config|
     puts "Skipping scenarios tagged with @remote"
   end
 end
+

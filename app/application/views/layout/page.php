@@ -6,7 +6,7 @@
   <body>
     <div id="nav">
         <ul>
-            <li><?= HTML::anchor('/','Home') ?></li>
+            <li><?php echo HTML::anchor('/','Home') ?></li>
             <?php 
                 if (isset($links)) {
                 foreach ($links as $link) {

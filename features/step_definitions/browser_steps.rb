@@ -11,6 +11,10 @@ After do
   $browser.quit
 end
 
+at_exit do
+  $browser.quit if $browser
+end
+
 
 When /^I go to (?:the )?"([^"]*)"(?: page)?$/ do |page|
   $browser.goto(location(page))

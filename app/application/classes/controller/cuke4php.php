@@ -9,7 +9,7 @@ class Controller_Cuke4php extends Controller_Template {
         $this->template->title = "Functional Testing with Cuke4php";
         $this->template->links = array(
             array("/browser","Browser Testing"),
-            array("/cuke4php_remote","Cuke4PHP Remote"));
+            array("/remote","Cuke4PHP Remote"));
 		$this->template->body = View::factory('cuke4php');
 	}
 
