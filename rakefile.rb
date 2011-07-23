@@ -1,8 +1,11 @@
 require 'rubygems'
+require 'rake/clean'
 require 'bundler/setup'
 
+CLOBBER.include("features/step_definitions/remote.wire")
+
 desc "Run browser based tests using Watir"
-task :watir do
+task :watir => :clobber do
   sh "cucumber -p watir features"
 end
 
@@ -32,3 +35,23 @@ end
 
 task :remote => "remote:default"
 task :default => :watir
+
+
+desc "Start Demo Kohana Server"
+task :up do
+  # this is necessary to allow the kohana server to read files in the shared folders and be able to serve them
+  sh "chmod -R 755 app"
+  sh "chmod -R 777 app/application/cache"
+  sh "chmod -R 777 app/application/logs"
+  exec 'vagrant up'
+end
+  
+desc "Stop Demo Kohana server"
+task :halt do
+  exec "vagrant halt"
+end
+
+desc "SSH to kohana server box"
+task :ssh do
+  exec "vagrant ssh"
+end
