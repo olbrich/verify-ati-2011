@@ -1,4 +1,18 @@
-NOTES:
+Testing PHP Web applications with Cucumber
+by Kevin C. Olbrich, Ph.D.
+iContact
+kolbrich@icontact.com
 
-* make sure the app directory is 755 or apache won't be able to serve it from the vagrant box
+SETUP:
+
+I strongly suggest using rvm (http://beginrescueend.com) to handle setting up and installing ruby.
+If you do, you will be able to install gems without using sudo.  If you insist on using the 
+system ruby, it may be necessary to use sudo to install some dependencies.
+
+* install bundler [ gem install bundler ]
+* use bundler to install required gems [ bundle install ]
+* start up the kohana server [ rake up ]
+        The first time you run this, it may take some time as it will need to download the correct base
+        image box and provision it.  You will also need to have network access during the provisioning process as it
+        needs to download and install several packages for the demo server to install properly.
 
