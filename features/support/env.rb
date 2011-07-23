@@ -18,7 +18,7 @@ end
 # otherwise cucumber complains about not being able to talk to the wire server
 AfterConfiguration do |config|
   if Dir[File.dirname(__FILE__) + "/../step_definitions/*.wire"].empty?
-    config.options[:tag_expression].add("~@remote")
+    config.tag_expression.send(:add,"~@remote")
     puts "Skipping scenarios tagged with @remote"
   end
 end
