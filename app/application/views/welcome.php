@@ -4,7 +4,7 @@
 <ul>
     <li><a href="/browser">Browser based testing</a></li>
     <li><a href="/cuke4php">Functional testing with cuke4php</a></li>
-    <li><a href="/cuke4php_remote">Remote Instrumentation with cuke4php</a></li>
+    <li><a href="/remote">Remote Instrumentation with cuke4php</a></li>
 </ul>
 
 <h3>Links</h3>
@@ -18,4 +18,5 @@
   <li><a href="https://github.com/sebastianbergmann/phpunit/">PHPUnit</a></li>
   <li><a href="https://github.com/jarib/watir-webdriver">Webdriver</a></li>
   <li><a href="http://relishapp.com/rspec">RSpec</a></li>
+  <li><a href="http://mmonit.com/monit/">Monit</a></li>
 </ul>
