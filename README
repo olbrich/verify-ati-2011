@@ -16,3 +16,10 @@ system ruby, it may be necessary to use sudo to install some dependencies.
         image box and provision it.  You will also need to have network access during the provisioning process as it
         needs to download and install several packages for the demo server to install properly.
 
+DESCRIPTION:
+
+There are three types of testing demonstrated in this presentation:
+
+1. Web UI testing via Watir
+2. Unit/Functional testing with Cuke4php
+3. Web UI testing with remote 

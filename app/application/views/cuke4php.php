@@ -5,6 +5,10 @@ Cuke4php is a PHP implementation of a Cucumber wire protocol server.
 This allows step definitions to be written in PHP, which facilitates direct interaction with PHP Code.
 </p>
 
+<ul>
+    <li><a href="/code/features/blog.feature">Blog Features</a></li>
+    <li><a href="/code/features/step_definitions/blog_steps.php">Blog Step Definitions</a></li>
+</ul>
 <h2>Best Practices</h2>
 <h3>When to use</h3>
 <ul>

@@ -33,6 +33,6 @@
 
 <hr />
 <p>To execute these tests</p>
-<code>
+<pre>
     $ rake watir
-</code>
+</pre>
