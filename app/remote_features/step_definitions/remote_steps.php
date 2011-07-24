@@ -14,6 +14,3 @@ class RemoteSteps extends CucumberSteps
     }
     
 }
-
-
-?>
