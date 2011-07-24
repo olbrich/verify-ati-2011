@@ -23,6 +23,7 @@ Vagrant::Config.run do |config|
   config.vm.forward_port "http", 80, 8080
   config.vm.forward_port "mysql", 3806, 4806
   config.vm.forward_port "cuke4php", 16817, 16818
+  config.vm.forward_port "monit", 3737, 3737
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
@@ -57,7 +58,8 @@ Vagrant::Config.run do |config|
 
     # You may also specify custom JSON attributes:
     chef.json.merge!({ 
-      :mysql => {:server_root_password => "foo" }
+      :mysql => {:server_root_password => "foo" },
+      :monit => {:poll_start_delay => 5}
     })
   end
 

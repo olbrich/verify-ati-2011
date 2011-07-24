@@ -80,3 +80,5 @@ web_app "app" do
   server_name 'localhost'
 end
 
+include_recipe 'monit'
+monitrc('cuke4php')

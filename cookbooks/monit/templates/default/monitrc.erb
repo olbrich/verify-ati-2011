@@ -1,0 +1,13 @@
+set daemon <%= @node[:monit][:poll_period] %>
+  with start delay <%= @node[:monit][:poll_start_delay] %>
+
+set logfile syslog facility log_daemon
+
+set eventqueue
+    basedir /var/monit  # set the base directory where events will be stored
+
+set httpd port 3737 and
+	allow vagrant:vagrant
+
+include /etc/monit/conf.d/*.conf
+
