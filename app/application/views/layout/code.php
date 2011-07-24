@@ -24,6 +24,7 @@
   <script src='/static/shBrushPhp.js' type='text/javascript'></script>
   <script src='/static/shBrushGherkin.js' type='text/javascript'></script>
   <script src='/static/shBrushYaml.js' type='text/javascript'></script>
+  <script src='/static/shBrushBash.js' type='text/javascript'></script>
   <script type="text/javascript" charset="utf-8">
     SyntaxHighlighter.all()
   </script>

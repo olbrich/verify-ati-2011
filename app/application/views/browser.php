@@ -33,6 +33,6 @@
 
 <hr />
 <p>To execute these tests</p>
-<pre>
+<pre class="brush: bash">
     $ rake watir
 </pre>
