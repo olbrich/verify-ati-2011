@@ -12,9 +12,18 @@
     </div>
     <div id="main">
 <h1><?php echo $title ?></h1>
-<pre><code>
+<pre class="brush: <?php $path = pathinfo($title); echo $path['extension']; ?>">
 <?php echo $body ?>
-</code></pre>
+</pre>
     </div>
   </body>
+  <link href='/static/shCore.css' rel='stylesheet' type='text/css' /> 
+  <link href='/static/shThemeDefault.css' rel='stylesheet' type='text/css' /> 
+  <script src='/static/shCore.js' type='text/javascript'></script>
+  <script src='/static/shBrushRuby.js' type='text/javascript'></script>
+  <script src='/static/shBrushPhp.js' type='text/javascript'></script>
+  <script src='/static/shBrushGherkin.js' type='text/javascript'></script>
+  <script type="text/javascript" charset="utf-8">
+    SyntaxHighlighter.all()
+  </script>
 </html>
