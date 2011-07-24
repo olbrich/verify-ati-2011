@@ -123,3 +123,9 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
+
+Route::set('code', 'code(/<filename>)', array('filename' => '.*'))
+    ->defaults(array(
+        'controller' => 'code',
+        'action' => 'index'
+    ));

@@ -60,3 +60,9 @@ th {
 td {
     padding: 5px;
 }
+
+pre {
+    border: 1px solid #999;
+    padding: 20px;
+    font-size: 150%;
+}

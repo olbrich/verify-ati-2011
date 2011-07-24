@@ -30,3 +30,9 @@
   <li><a href="/blog">Blog index</a></li>
   <li><a href="/blog/new">Create new blog entry</a>
 </ul>
+
+<hr />
+<p>To execute these tests</p>
+<code>
+    $ rake watir
+</code>
