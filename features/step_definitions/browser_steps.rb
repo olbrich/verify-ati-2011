@@ -1,10 +1,6 @@
 Before do
-  $browser = case ENV['BROWSER']
-             when 'ie','firefox','chrome'
-               Watir::Browser.new ENV['BROWSER'].to_sym
-             when 'headless'
-               nil
-             end
+  # BROWSER can be 'ie','firefox','chrome'
+  $browser = Watir::Browser.new ENV['BROWSER'].to_sym
 end
 
 After do
@@ -14,7 +10,6 @@ end
 at_exit do
   $browser.quit if $browser
 end
-
 
 When /^I go to (?:the )?"([^"]*)"(?: page)?$/ do |page|
   $browser.goto(location(page))
@@ -28,18 +23,11 @@ When /^I press "([^"]*)"$/ do |button_text|
   $browser.button(:value, button_text).click
 end
 
-
-Given /^a blog entry exists:$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
-end
-
 # ========= Transforms
 
 Transform /^(\d+)$/ do |num|
   num.to_i
 end
-
 
 # ========= Assertions
 
@@ -53,12 +41,4 @@ end
 
 Then /^the page should contain at least (\d+) "([^"]*)"(?: tags?)?$/ do |count, tag|
   $browser.send("#{tag}s").should have_at_least(count).elements
-end
-
-Then /^the page should contain "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then /^I should be on the "([^"]*)" page$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
 end

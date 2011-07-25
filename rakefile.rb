@@ -5,36 +5,21 @@ require 'bundler/setup'
 CLOBBER.include("features/step_definitions/remote.wire")
 
 desc "Run browser based tests using Watir"
-task :watir => :clobber do
-  sh "cucumber -p watir features"
+task :browser => :clobber do
+  exec "cucumber -p browser features"
 end
 
-desc "Run Kohana Framework tests"
-task :kohana do
-  exec "cd app && phpunit --bootstrap=modules/unittest/bootstrap.php modules/unittest/tests.php"
-end
-
+# create the remote.wire file needed to run remote features
 file "features/step_definitions/remote.wire" do
   File.open("features/step_definitions/remote.wire","w") do |f|
     f << "host: localhost\nport: 16818\n"
   end
 end
 
-namespace :remote do
-  
-  task :start do
-    sh "vagrant ssh -e 'cd /vagrant/app && cuke4php_server -p 16817 remote_features/ &'"
-  end
-
-  desc "default"
-  task :default  => ["features/step_definitions/remote.wire"] do
-    sh "cucumber -p watir features"
-  end
-  
+desc "Run Watir tests including those that require remote cuke4php"
+task :remote  => ["features/step_definitions/remote.wire"] do
+  exec "cucumber -p remote features"
 end
-
-task :remote => "remote:default"
-task :default => :watir
 
 
 desc "Start Demo Kohana Server"
@@ -54,4 +39,9 @@ end
 desc "SSH to kohana server box"
 task :ssh do
   exec "vagrant ssh"
+end
+
+desc "Run Kohana Framework tests"
+task :kohana do
+  exec "cd app && phpunit --bootstrap=modules/unittest/bootstrap.php modules/unittest/tests.php"
 end
