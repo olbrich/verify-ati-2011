@@ -25,6 +25,6 @@ Scenario: I view a blog entry
     | title | yet another awesome blog post |
     | body  | I can haz blog post?          |
   When I go to "blog/show/1"
-  Then the page title should be "yet another awesome blog post"
+  Then the page title should be "Blog: yet another awesome blog post"
   And the page should contain "I can haz blog post?"
   
