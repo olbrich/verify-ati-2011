@@ -3,11 +3,16 @@
 <p>It is possible to automate browser based tests by using existing tools, such as Watir or Selenium, and simply running them against an existing php web application.  Because these tests interact with the Web site through a browser, they are agnostic about the language used to implement the Web site.</p>
 
 <hr />
-<h2>Examples</h2>
-<pre>
-<iframe src="/browser.html" style="width:100%;height:600px;border:0;"></iframe>
-</pre>
+<ul>
+    <li><a href="/code/features/blog.feature">Blog Features</a></li>
+    <li><a href="/code/features/step_definitions/browser_steps.rb">Step Definitions</a></li>
+</ul>
 
+<hr />
+<p>To execute these tests</p>
+<pre class="brush: bash">
+$ rake watir
+</pre>
 <hr />
 
 <h2>Pros</h2>
@@ -31,8 +36,3 @@
   <li><a href="/blog/new">Create new blog entry</a>
 </ul>
 
-<hr />
-<p>To execute these tests</p>
-<pre class="brush: bash">
-    $ rake watir
-</pre>

@@ -6,8 +6,8 @@ This allows step definitions to be written in PHP, which facilitates direct inte
 </p>
 
 <ul>
-    <li><a href="/code/features/blog.feature">Blog Features</a></li>
-    <li><a href="/code/features/step_definitions/blog_steps.php">Blog Step Definitions</a></li>
+    <li><a href="/code/app/features/blog.feature">Blog Features</a></li>
+    <li><a href="/code/app/features/step_definitions/blog_steps.php">Blog Step Definitions</a></li>
 </ul>
 <h2>Best Practices</h2>
 <h3>When to use</h3>

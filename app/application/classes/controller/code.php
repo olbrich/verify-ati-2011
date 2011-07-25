@@ -11,7 +11,7 @@ class Controller_Code extends Controller_Template
   function action_index()
   {
     $this->template->title = $this->request->param('filename');
-    $content = file_get_contents(SYSPATH . "/../" . $this->request->param('filename'));
+    $content = file_get_contents( "/vagrant/" . $this->request->param('filename'));
     $this->template->body = htmlspecialchars($content);
   }
   
