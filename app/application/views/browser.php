@@ -11,7 +11,7 @@
 <hr />
 <p>To execute these tests</p>
 <pre class="brush: bash">
-$ rake watir
+$ rake browser
 </pre>
 <hr />
 
