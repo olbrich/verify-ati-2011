@@ -1,3 +1,9 @@
-check process cuke4php_server matching "cuke4php_server"
-	start = "/var/lib/gems/1.8/bin/rake -f /vagrant/app/rakefile.rb  server" with timeout 60 seconds
+check process cuke4php_server matching "[c]uke4php_server"
+	start = "/var/lib/gems/1.8/bin/rake -f /vagrant/app/rakefile.rb  server" with timeout 180 seconds
 	stop = "/usr/bin/pkill -f cuke4php_server"
+	depends on mysql
+	
+check file remote_steps.php path /var/www/app/remote_features/step_definitions/remote_steps.php
+	  if changed timestamp 
+		then exec "/usr/bin/pkill -f cuke4php_server"
+
