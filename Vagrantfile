@@ -59,7 +59,8 @@ Vagrant::Config.run do |config|
     # You may also specify custom JSON attributes:
     chef.json.merge!({ 
       :mysql => {:server_root_password => "foo" },
-      :monit => {:poll_start_delay => 5}
+      :monit => {:poll_start_delay => 5, :poll_period => 15},
+      :tz  => 'America/New_York'
     })
   end
 
