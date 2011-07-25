@@ -6,6 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+include_recipe "timezone"
 include_recipe "mysql::server"
 include_recipe "mysql::client"
 
@@ -82,3 +83,5 @@ end
 
 include_recipe 'monit'
 monitrc('cuke4php')
+monitrc("mysql")
+monitrc("apache")
