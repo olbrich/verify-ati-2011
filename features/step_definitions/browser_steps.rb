@@ -42,3 +42,7 @@ end
 Then /^the page should contain at least (\d+) "([^"]*)"(?: tags?)?$/ do |count, tag|
   $browser.send("#{tag}s").should have_at_least(count).elements
 end
+
+Then /^the page should contain "([^"]*)"$/ do |text|
+  $browser.html.should include(text)
+end
