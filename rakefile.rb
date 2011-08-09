@@ -4,8 +4,18 @@ require 'bundler/setup'
 
 CLOBBER.include("features/step_definitions/remote.wire")
 
+
+task :instrument do
+  sh %Q{vagrant ssh -c "cd /vagrant/app && php phpcoverage/src/cli/instrument.php -p phpcoverage/src -b . ./index.php" }
+  sleep 1
+end
+
+task :deinstrument do
+  sh %Q{vagrant ssh -c "cd /vagrant/app && php phpcoverage/src/cli/instrument.php -p phpcoverage/src -b . -u ./index.php" }
+end
+
 desc "Run browser based tests using Watir"
-task :browser => :clobber do
+task :browser => [:clobber] do
   exec "cucumber -p browser features"
 end
 
@@ -19,6 +29,11 @@ end
 desc "Run Watir tests including those that require remote cuke4php"
 task :remote  => ["features/step_definitions/remote.wire"] do
   exec "cucumber -p remote features"
+end
+
+desc "Run tests with code coverage"
+task :coverage => [:instrument, :browser] do
+  Rake::Task.invoke[:deinstrument]
 end
 
 

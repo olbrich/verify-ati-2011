@@ -14,6 +14,7 @@ def location(name)
   end
 end
 
+
 open("#{ROOT_URL}/phpcoverage.remote.top.inc.php?phpcoverage-action=init")
 
 

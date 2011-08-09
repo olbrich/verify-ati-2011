@@ -109,6 +109,6 @@ require APPPATH.'bootstrap'.EXT;
 echo Request::factory()
 	->execute()
 	->send_headers()
-	->body(); 
+	->body();
 ?>
 <?php require "/vagrant/app/phpcoverage.remote.bottom.inc.php"; ?>

@@ -3,8 +3,7 @@
     require_once("src/reporter/HtmlCoverageReporter.php");
     require_once("src/remote/RemoteCoverageRecorder.php");
 
-    // when running this on the remote machine, don't add port 8080 as it is forwarded to the host machine, locally we load over port 80
-    $xmlUrl = "http://localhost/phpcoverage.remote.top.inc.php?phpcoverage-action=get-coverage-xml";
+    $xmlUrl = "/tmp/phpcoverage.coverage.xml";
 
     // Configure reporter, and generate report
     $covReporter = new HtmlCoverageReporter(
@@ -14,7 +13,7 @@
 
     $cov = new RemoteCoverageRecorder($includePaths, $excludePaths, $covReporter);
     system("rm -rf /vagrant/app/phpcoverage/php-coverage-remote-report/*");
-    $cov->generateReport($xmlUrl,true);
+    $cov->generateReport($xmlUrl);
     
     header("Location: /phpcoverage/report");
 ?>

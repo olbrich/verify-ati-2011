@@ -102,7 +102,9 @@
                 if(!empty($_REQUEST["tmp-dir"])) {
                     $cov->setTmpDir($_REQUEST["tmp-dir"]);
                 }
-                $cov->setCoverageFileName($_REQUEST["cov-file-name"]);
+                if(!empty($_REQUEST['cov-file-name'])) {
+                    $cov->setCoverageFileName($_REQUEST["cov-file-name"]);                    
+                }
                 if(!$cov->cleanCoverageFile()) {
                     die("Cannot delete existing coverage data.");
                 }

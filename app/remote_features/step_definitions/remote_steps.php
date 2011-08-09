@@ -32,4 +32,11 @@ class RemoteSteps extends CucumberSteps
         Kohana::$log->add(Log::INFO, "Created Blog { id: $blog->id title: $blog->title }");
     }
     
+    /**
+    * Given /^Remote code is instrumented for code coverage$/
+    **/
+    public function stepRemoteCodeIsInstrumentedForCodeCoverage() {
+        system("ls");
+    }
+    
 }
