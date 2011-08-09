@@ -1,3 +1,5 @@
+
+
 Before do
   # BROWSER can be 'ie','firefox','chrome'
   $browser = Watir::Browser.new ENV['BROWSER'].to_sym
@@ -8,6 +10,8 @@ After do
 end
 
 at_exit do
+  open("#{ROOT_URL}/phpcoverage/generateReport.php")
+  open("#{ROOT_URL}/phpcoverage.remote.top.inc.php?phpcoverage-action=cleanup")
   $browser.quit if $browser
 end
 

@@ -28,6 +28,7 @@ task :up do
   sh "chmod -R 755 app"
   sh "chmod -R 777 app/application/cache"
   sh "chmod -R 777 app/application/logs"
+  sh "chmod -R 777 app/phpcoverage/php-coverage-remote-report"
   exec 'vagrant up'
 end
   

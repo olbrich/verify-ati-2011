@@ -19,4 +19,5 @@
   <li><a href="https://github.com/jarib/watir-webdriver">Webdriver</a></li>
   <li><a href="http://relishapp.com/rspec">RSpec</a></li>
   <li><a href="http://mmonit.com/monit/">Monit</a></li>
+  <li><a href="http://phpcoverage.sourceforge.net/">PHPCoverage</a></li>
 </ul>
