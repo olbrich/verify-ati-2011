@@ -25,12 +25,10 @@ include_recipe "apache2::mod_rewrite"
 
 include_recipe "php"
 
-package "php5-mysql" do
-  action :install
-end
-
-package "php5-curl" do
-  action :install
+%w{php5-mysql php5-curl php5-xdebug}.each do |pkg|
+  package pkg do
+    action :install
+  end
 end
 
 %w{pear.phpunit.de components.ez.no pear.symfony-project.com}.each do |channel|
@@ -43,6 +41,10 @@ php_pear "PHPUnit" do
   channel 'phpunit'
   preferred_state 'beta' # required because some dependencies aren't stable
   version "3.5.14"
+  action :install
+end
+
+php_pear "XML_Parser" do
   action :install
 end
 

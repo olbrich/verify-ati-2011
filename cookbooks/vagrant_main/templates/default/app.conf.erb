@@ -3,6 +3,7 @@
   DocumentRoot <%= @params[:docroot] %>
   RewriteEngine On
   RewriteOptions inherit
+  SetEnv PHPCOVERAGE_HOME /var/www/app/phpcoverage/src
   
   <Directory <%= @params[:docroot] %>>
     Options FollowSymLinks
