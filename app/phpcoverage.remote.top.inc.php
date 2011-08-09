@@ -69,11 +69,9 @@
 
         global $util;
         $logger = $util->getLogger();
-        $logger->setLevel("LOG_DEBUG");
 
         // Create a distinct hash (may or may not be unique)
         $session_id = md5($_SERVER["REMOTE_ADDR"] . $_SERVER["SERVER_NAME"]);
-        $logger->info("[phpcoverage.remote.top.inc.php] REMOTE_ADDR=" . $_SERVER['REMOTE_ADDR'] . " SERVER_NAME=".$_SERVER['SERVER_NAME']);
         $tmpFile = $util->getTmpDir() . "/phpcoverage.session." . $session_id;
         $logger->info("[phpcoverage.remote.top.inc.php] Session id: " . $session_id . " Saved in: " . $tmpFile,
             __FILE__, __LINE__);
