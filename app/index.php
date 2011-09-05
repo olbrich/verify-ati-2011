@@ -1,4 +1,3 @@
-<?php require_once "/vagrant/app/phpcoverage.remote.top.inc.php"; ?>
 <?php
 
 /**
@@ -111,4 +110,3 @@ echo Request::factory()
 	->send_headers()
 	->body();
 ?>
-<?php require "/vagrant/app/phpcoverage.remote.bottom.inc.php"; ?>
