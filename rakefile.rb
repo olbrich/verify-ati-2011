@@ -16,7 +16,7 @@ end
 
 desc "Run browser based tests using Watir"
 task :browser => [:clobber] do
-  exec "cucumber -p browser features"
+  sh "cucumber -p browser features"
 end
 
 # create the remote.wire file needed to run remote features
@@ -33,7 +33,7 @@ end
 
 desc "Run tests with code coverage"
 task :coverage => [:instrument, :browser] do
-  Rake::Task.invoke[:deinstrument]
+  Rake::Task[:deinstrument].execute
 end
 
 

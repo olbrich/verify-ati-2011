@@ -5,6 +5,7 @@
     <li><a href="/browser">Browser based testing</a></li>
     <li><a href="/cuke4php">Functional testing with cuke4php</a></li>
     <li><a href="/remote">Remote Instrumentation with cuke4php</a></li>
+    <li><a href="/coverage">Code Coverage</a></li>
 </ul>
 
 <h3>Links</h3>
