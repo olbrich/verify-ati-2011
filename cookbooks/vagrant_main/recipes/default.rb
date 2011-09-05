@@ -37,10 +37,16 @@ end
   end
 end
 
+php_pear "PHP_CodeCoverage" do
+  channel "phpunit"
+  version "1.0.5"
+  action :install
+end
+
 php_pear "PHPUnit" do
   channel 'phpunit'
   preferred_state 'beta' # required because some dependencies aren't stable
-  version "3.5.14"
+  version "3.5.15"
   action :install
 end
 
