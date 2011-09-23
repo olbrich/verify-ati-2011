@@ -1,0 +1,4 @@
+digraph cuke4php {
+	cucumber -> step_definitions;
+	cucumber -> cuke4php_step_definitions;
+}

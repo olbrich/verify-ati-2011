@@ -1,0 +1,40 @@
+digraph cuke4php {
+
+	//nodesep = "0.5 equally";
+
+	//splines=polyline;
+	concentrate = true;
+
+	subgraph cluster0 {
+		label = "localhost";
+		style = dotted;
+		cucumber [shape=box];
+		cucumber -> "ruby steps";
+		"ruby steps" -> browser;
+		"ruby steps" -> "REST APIs"
+	}
+
+
+	services [shape=box,label="Database\nMemcache\nNoSql\nMail\n3rd Party"];
+
+	subgraph cluster1 {
+		label = "remote";
+		style = dotted;
+		{
+		rank = same;
+		cuke4php [shape=box];
+		"web server" [shape=box];
+		}
+		"web server" -> "web app"
+		"php steps" -> "web app";
+		cuke4php -> "php steps";
+		
+	}
+
+	"php steps" -> services;
+	"ruby steps" -> services;
+	"web app" -> services;
+	cucumber -> cuke4php;
+	"REST APIs" -> "web server";
+	browser -> "web server";
+}

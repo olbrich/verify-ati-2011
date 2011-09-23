@@ -1,0 +1,22 @@
+digraph cuke4php {
+
+	concentrate = true;
+
+
+	subgraph cluster0 {
+		label = "localhost";
+		style = dotted;
+		cucumber [shape=box];
+
+		subgraph cluster1 {
+			label = "ruby process";
+			cucumber -> "ruby steps";
+		}
+		subgraph cluster2 {
+			label = "php process";
+			cucumber -> cuke4php;
+			cuke4php -> "php steps";	
+		}
+	}
+	
+}
