@@ -6,17 +6,17 @@ CLOBBER.include("features/step_definitions/remote.wire")
 
 
 task :instrument do
-  sh %Q{vagrant ssh -c "cd /vagrant/app && php phpcoverage/src/cli/instrument.php -p phpcoverage/src -b . ./index.php" }
+  sh %Q{bundle exec vagrant ssh -c "cd /vagrant/app && php phpcoverage/src/cli/instrument.php -p phpcoverage/src -b . ./index.php" }
   sleep 1
 end
 
 task :deinstrument do
-  sh %Q{vagrant ssh -c "cd /vagrant/app && php phpcoverage/src/cli/instrument.php -p phpcoverage/src -b . -u ./index.php" }
+  sh %Q{bundle exec vagrant ssh -c "cd /vagrant/app && php phpcoverage/src/cli/instrument.php -p phpcoverage/src -b . -u ./index.php" }
 end
 
 desc "Run browser based tests using Watir"
 task :browser => [:clobber] do
-  sh "cucumber -p browser features"
+  sh "bundle exec cucumber -p browser features"
 end
 
 # create the remote.wire file needed to run remote features
@@ -28,7 +28,7 @@ end
 
 desc "Run Watir tests including those that require remote cuke4php"
 task :remote  => ["features/step_definitions/remote.wire"] do
-  exec "cucumber -p remote features"
+  exec "bundle exec cucumber -p remote features"
 end
 
 desc "Run tests with code coverage"
@@ -45,17 +45,17 @@ task :up do
   sh "chmod -R 777 app/application/logs"
   # sh "touch app/phpcoverage/report"
   # sh "chmod -R 777 app/phpcoverage/report"
-  exec 'vagrant up'
+  exec 'bundle exec vagrant up'
 end
   
 desc "Stop Demo Kohana server"
 task :halt do
-  exec "vagrant halt"
+  exec "bundle exec vagrant halt"
 end
 
 desc "SSH to kohana server box"
 task :ssh do
-  exec "vagrant ssh"
+  exec "bundle exec vagrant ssh"
 end
 
 desc "Run Kohana Framework tests"
