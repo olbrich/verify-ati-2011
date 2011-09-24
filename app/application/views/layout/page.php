@@ -6,7 +6,8 @@
   <body>
     <div id="nav">
         <ul>
-            <li><?php echo HTML::anchor('/','Home') ?></li>
+            <li><img src="/static/VerifyATILogoSmall.png" style="border: 1px solid black; background: white;" /></li>
+            <li><?php echo HTML::anchor('/','|<< Home') ?></li>
             <?php 
                 if (isset($links)) {
                 foreach ($links as $link) {

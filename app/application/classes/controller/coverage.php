@@ -8,7 +8,8 @@ class Controller_Coverage extends Controller_Template {
   {
         $this->template->title = "Code Coverage";
         $this->template->links = array(
-            array("/remote","Remote Cuke4PHP"));
+            array("/remote","< Remote Cuke4PHP"),
+            array("/coverage", "Code Coverage >>|"));
 		$this->template->body = View::factory('coverage');
 	}
 

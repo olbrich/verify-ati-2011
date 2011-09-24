@@ -2,13 +2,13 @@
 
 <h2>Topics</h2>
 <ul>
-    <li><a href="/browser">Browser based testing</a></li>
+    <li><a href="/browser">In Browser testing</a></li>
     <li><a href="/cuke4php">Functional testing with cuke4php</a></li>
     <li><a href="/remote">Remote Instrumentation with cuke4php</a></li>
     <li><a href="/coverage">Code Coverage</a></li>
 </ul>
 
-<h3>Links</h3>
+<h3>Tools</h3>
 <ul>
   <li><a href="http://cukes.info">Cucumber</a></li>
   <li><a href="http://vagrantup.com">Vagrant</a></li>

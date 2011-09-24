@@ -1,8 +1,9 @@
-<h1>Browser-Based Testing</h1>
+<h1>In Browser Testing</h1>
 
-<p>It is possible to automate browser based tests by using existing tools, such as Watir or Selenium, and simply running them against an existing php web application.  Because these tests interact with the Web site through a browser, they are agnostic about the language used to implement the Web site.</p>
+<p>It is possible to automate browser based tests by using existing tools, such as Watir or Selenium, and simply run them against an existing php web application.  Because these tests interact with the Web site through a browser, they are agnostic about the language used to implement the Web site.</p>
 
 <hr />
+<h2>Examples</h2>
 <ul>
     <li><a href="/code/features/blog.feature">Blog Features</a></li>
     <li><a href="/code/features/step_definitions/browser_steps.rb">Step Definitions</a></li>

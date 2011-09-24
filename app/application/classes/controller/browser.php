@@ -6,8 +6,10 @@ class Controller_Browser extends Controller_Template {
 
 	public function action_index()
   {
-        $this->template->title = "Browser-based testing";
-        $this->template->links = array(array("/cuke4php","Cuke4PHP"));
+        $this->template->title = "In Browser Testing";
+        $this->template->links = array(
+        	array("/browser","In Browser Testing"),
+	        array("/cuke4php","Cuke4PHP Functional >"));
 		$this->template->body = View::factory('browser');
 	}
 
