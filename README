@@ -18,8 +18,9 @@ system ruby, it may be necessary to use sudo to install some dependencies.
 
 DESCRIPTION:
 
-There are three types of testing demonstrated in this presentation:
+There are four types of testing demonstrated in this presentation:
 
-1. Web UI testing via Watir
+1. Web UI in browser testing
 2. Unit/Functional testing with Cuke4php
-3. Web UI testing with remote 
+3. Remote UI testing augmented with cuke4php
+4. Code Coverage
