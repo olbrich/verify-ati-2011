@@ -7,6 +7,8 @@ Scenario: I visit the blog index
   When I go to "blog/index" 
   Then the page title should be "Blog Index"
   And the page should contain 1 "table" tag
+  And the page should contain 1 "img" tag
+  And the Foo is in the Bar
 
 Scenario: I create a blog entry
   When I go to the "blog/new" page
