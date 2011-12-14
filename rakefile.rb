@@ -36,9 +36,11 @@ task :coverage => [:instrument, :browser] do
   Rake::Task[:deinstrument].execute
 end
 
+directory "app/application/cache"
+directory "app/application/logs"
 
 desc "Start Demo Kohana Server"
-task :up do
+task :up => %w{app/application/cache app/application/logs} do
   # this is necessary to allow the kohana server to read files in the shared folders and be able to serve them
   sh "chmod -R 755 app"
   sh "chmod -R 777 app/application/cache"
