@@ -37,10 +37,24 @@ end
   end
 end
 
-php_pear "PHP_CodeCoverage" do
-  channel "phpunit"
-  version "1.0.5"
-  action :install
+# it's necessary to install these dependencies of PHPUnit first or 
+# pear will attempt to install newer versions of them when PHPUnit is
+# installed
+
+{ 
+  'PHP_CodeCoverage'   => '1.0.5',
+  'File_Iterator'      => '1.2.3',
+  'Text_Template'      => '1.0.0',
+  'PHP_Timer'          => '1.0.0',
+  'PHPUnit_MockObject' => '1.0.3',
+  'DbUnit'             => '1.0.0',
+  'PHPUnit_Selenium'   => '1.0.1',
+}.each do |pear_name, pear_version|
+  php_pear pear_name do
+    channel "phpunit"
+    version pear_version
+    action :install
+  end
 end
 
 php_pear "PHPUnit" do
