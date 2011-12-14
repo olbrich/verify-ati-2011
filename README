@@ -15,6 +15,7 @@ system ruby, it may be necessary to use sudo to install some dependencies.
         The first time you run this, it may take some time as it will need to download the correct base
         image box and provision it.  You will also need to have network access during the provisioning process as it
         needs to download and install several packages for the demo server to install properly.
+* Visit the first page (http://localhost:8080)
 
 DESCRIPTION:
 
@@ -24,3 +25,7 @@ There are four types of testing demonstrated in this presentation:
 2. Unit/Functional testing with Cuke4php
 3. Remote UI testing augmented with cuke4php
 4. Code Coverage
+
+NOTE:
+
+The first time that vagrant sets up the box, it will probably recompile the guest extensions.  Once this happens, vagrant will not be able to provision the box until it has been powered down and rebooted.  Once that happens, things should go smoothly.
